@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- BoxIcons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- FontsAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- MyCSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- MediaQuery -->
+    <link rel="stylesheet" href="./css/media.css">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!-- FavIcon -->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+
+    <title>RedSpace</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg border-bottom border-bottom-dark navbar-background"
+        style="background-color: #111111;" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand navbar-logo" href="#"><img src="./img/navbar/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 my-navbar">
+                    <li class="nav-item me-auto">
+                        <a href="#lancamentos"><span></span><span></span><span></span><span></span>Lançamentos</a>
+                    </li>
+                    <li class="nav-item me-auto">
+                        <a href="#destaques"><span></span><span></span><span></span><span></span>Destaques</a>
+                    </li>
+
+                    <li class="nav-item me-auto">
+                        <a href="#catalogo"><span></span><span></span><span></span><span></span>Catálogo</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav login-area">
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <section id="home">
+            <div class="logo-flutuando floating shine-effect"></div>
+            <div class="home-wallpaper"></div>
+            <div class="home-parallax"></div>
+
+        </section>
+
+        <section id="lancamentos">
+            <h1 class="neonText" data-aos="fade-right">Recém Lançados</h1>
+
+            <div class="carousel-container" data-aos="fade-up" data-aos-delay="50">
+                <div class="carousel-inner">
+
+                    <div class="col-lg-12">
+                        <div class="row cards-recem-lancados">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="destaques">
+            <!-- Swiper -->
+            <h1 class="neonText">DESTAQUES</h1>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper jogos-destaques-api">
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <section id="catalogo">
+            <h1 class="neonText" data-aos="fade-left">Catálogo</h1>
+            <div class="catalogo-container" data-aos="fade-up">
+                <div class="area">
+                    <div class="catalogo-inner">
+                        <sidebar class="main-menu">
+                            <img src="./img/filtro-catalogo/Menu.png" alt="" class="sidebar-menu">
+                            <hr>
+                            <ul class="sidebar-itens">
+                                <li>
+                                    <div class="nav-text botaoFiltrar" data-valor="all">
+                                        <input type="checkbox" name="switch" class="check">
+                                        <img src="./img/filtro-catalogo/Mapa.png" alt="">
+                                        <p>Todos</p>
+                                    </div>
+                                </li>
+                                <br>
+                                <li>
+                                    <div class="nav-text botaoFiltrar" data-valor="1">
+                                        <input type="checkbox" name="switch" class="check">
+                                        <img src="./img/filtro-catalogo/Mapa.png" alt="">
+                                        <p>Aventura</p>
+                                    </div>
+                                </li>
+                                <br>
+                                <li>
+                                    <div class="nav-text botaoFiltrar" data-valor="2">
+                                        <input type="checkbox" name="switch" class="check">
+                                        <img src="./img/filtro-catalogo/Esportes.png" alt="">
+                                        <p>Esportes</p>
+                                    </div>
+                                </li>
+                                <br>
+                                <li>
+                                    <div class="nav-text botaoFiltrar" data-valor="3">
+                                        <input type="checkbox" name="switch" class="check">
+                                        <img src="./img/filtro-catalogo/Estrategia.png" alt="">
+                                        <p>Estratégia</p>
+                                    </div>
+                                </li>
+                                <br>
+                                <li>
+                                    <div class="nav-text botaoFiltrar" data-valor="4">
+                                        <input type="checkbox" name="switch" class="check">
+                                        <img src="./img/filtro-catalogo/FPS.png" alt="">
+                                        <p>FPS</p>
+                                    </div>
+                                </li>
+                                <br>
+                                <li>
+                                    <div class="nav-text botaoFiltrar" data-valor="5">
+                                        <input type="checkbox" name="switch" class="check">
+                                        <img src="./img/filtro-catalogo/Multiplayer.png" alt="">
+                                        <p>Co-op</p>
+                                    </div>
+                                </li>
+                                <br>
+                                <li>
+                                    <div class="nav-text botaoFiltrar" data-valor="6">
+                                        <input type="checkbox" name="switch" class="check">
+                                        <img src="./img/filtro-catalogo/Plataforma.png" alt="">
+                                        <p>2D</p>
+                                    </div>
+                                </li>
+                                <br>
+                                <li>
+                                    <div class="nav-text botaoFiltrar" data-valor="7">
+                                        <input type="checkbox" name="switch" class="check">
+                                        <img src="./img/filtro-catalogo/RPG.png" alt="">
+                                        <p>RPG</p>
+                                    </div>
+                                </li>
+                                <br>
+                                <li class="filtr-controls botaoFiltrar" data-valor="8">
+                                    <div class="nav-text">
+                                        <input type="checkbox" name="switch" class="check">
+                                        <img src="./img/filtro-catalogo/Terror.png" alt="">
+                                        <p>Terror</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </sidebar>
+
+                        <div class="catalogo-gallery">
+
+                            <div class="row height d-flex justify-content-center align-items-center">
+                                <div class="col-md-8">
+                                    <div class="search">
+                                        <input id="inputPesquisa" type="text" class="form-control" placeholder="Digite o nome do jogo">
+                                        <button class="btn btn-primary botaoPesquisa"><i class="bi bi-search"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper catalogoSwiper">
+                                <div class="swiper-wrapper catalogo-gallery-api filter-container" data-aos="fade-down-right">
+
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="contato-container" data-aos="fade=up">
+                <div class="contato-info">
+                    <ul>
+                        <li>
+                            <h2>SOBRE NÓS</h2>
+                        </li>
+                        <li>
+                            <p>A <span class="redtype">Red Space</span> é uma plataforma virtual focada no mercado de
+                                games, que apoia jogos indies e empresas de menor expressão. O site é dedicado a
+                                oferecer uma experiência única para os fãs de jogos, conectando desenvolvedores com
+                                jogadores e promovendo uma comunidade engajada. </p>
+                        </li>
+                        <li>
+                            <p>A equipe é apaixonada por games e trabalha incansavelmente para dar destaque aos jogos
+                                mais criativos, inovadores e emocionantes do mercado. Venha fazer parte da comunidade
+                                Red Space se você é um desenvolvedor de jogos indie ou um jogador apaixonado por games!
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="vr"></div>
+                <div class="contato-inner">
+                    <div class="parceiros">
+                        <h3>Parceiros</h3>
+                        <ul>
+                            <li>
+                                <a href="https://www.xbox.com/pt-BR">
+                                    <img src="./img/parceiros/logo-xbox.png" alt="xbox">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.playstation.com/pt-br/">
+                                    <img src="./img/parceiros/logo-playstation.png" alt="playstation">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.nintendo.com/pt-br/">
+                                    <img src="./img/parceiros/logo-nintendo.png" alt="nintendo">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://store.epicgames.com/pt-BR/">
+                                    <img src="./img/parceiros/logo-epicgames.png" alt="epic games">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.tencent.com/">
+                                    <img src="./img/parceiros/logo-tencent.png" alt="tencent">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="redes-sociais">
+                        <ul>
+                            <li>
+                                <i class="bi bi-discord"></i>
+                                <a href="">
+                                    discord.gg/redspace
+                                </a>
+                            </li>
+                            <li>
+                                <i class="bi bi-instagram"></i>
+                                <a href="">
+                                    @redspace
+                                </a>
+                            </li>
+                            <li>
+                                <i class="bi bi-twitter"></i>
+                                <a href="">
+                                    @redspacetwt
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer>
+            <marquee direction="right" scrollamount="5s">
+                <span>Designed by ForDevs </span>
+                <img src="./img/pacman.gif" alt="marquee">
+                <span> Red Space &copy; 2023 All rights reserved.</span>
+            </marquee>
+        </footer>
+
+        <div class="myBtn"><button onclick="topFunction()" id="myBtn" title="Ir para o Topo">Top.</button></div>
+
+    </main>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+
+    <!-- MeuScript -->
+    <script type="text/javascript" src="./js/script.js"></script>
+</body>
+
+</html>

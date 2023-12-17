@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- our css -->
+    <link rel="stylesheet" href="./css/loginStyle.css">
+    
+    <!-- media -->
+    <link rel="stylesheet" href="./css/loginMedia.css">
+
+    <!-- FavIcon -->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+
+    <title>Login</title>
+</head>
+
+<body>
+    <section id="login">
+        <div class="arrow">
+            <a href="index.html"><img src="/img/login/back-arrow.png" alt="Voltar"></a>
+            <label for="">Voltar</label>
+        </div>
+        <div class="logo floating">
+            <img src="/img/login/redspace-logo.png" alt="RedSpace">
+        </div>
+        <div class="form-box">
+            <div class="form-value">
+                <h2>Login</h2>
+                <div class="inputbox">
+                    <i class="bi bi-envelope-fill"></i>
+                    <input type="email" required id="txtEmail" autocomplete="off">
+                    <label for="">E-mail</label>
+                </div>
+                <div class="inputbox">
+                    <i class="bi bi-lock-fill"></i>
+                    <input type="password" required id="txtSenha" autocomplete="off">
+                    <label for="">Senha</label>
+                </div>
+                <div class="forget">
+                    <label for=""><input type="checkbox">Permanecer conectado? <a href="#">Recuperar senha.</a></label>
+                </div>
+                <button id="btnLogin">Continuar</button>
+                <div class="register">
+                    <p>Não possui conta? <a href="./registerpg.html">Cadastre-se!</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ERRO AO REALIZAR O LOGIN</h5>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btnFecharModal" class="btn btn-danger" data-dismiss="modal">FECHAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+
+    <!-- MeuScript -->
+    <script type="text/javascript" src="./js/login.js"></script>
+</body>
+
+</html>

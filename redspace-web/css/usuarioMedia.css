@@ -1,0 +1,76 @@
+/* #region Responsividade 320px - 867px RETRATO*/
+@media (min-width: 320px) and (max-width: 867px){
+  .header__wrapper .cols__container .left__col .line h3{
+    margin-top: 45px!important;
+    margin: 0 auto;
+    font-size: 20px!important;
+  }
+}
+/* #endregion */
+
+/* #region Responsividade 868px - 1920px RETRATO*/
+@media (min-width: 868px) {
+    .header__wrapper .cols__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 90%;
+      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 50px;
+    }
+    .header__wrapper .cols__container .left__col {
+      padding: 25px 0px;
+    }
+
+    .header__wrapper .cols__container .right__col nav ul {
+      flex-direction: row;
+      gap: 30px;
+    }
+    .header__wrapper .cols__container .right__col .photos {
+      height: 365px;
+      overflow: auto;
+      padding: 0 0 30px;
+    }
+  }
+  /* #endregion */
+  
+  /* #region Responsividade 1017px - 1608px RETRATO*/
+  @media (min-width: 1017px) {
+    .header__wrapper .cols__container .left__col {
+      margin: 0;
+      margin-right: auto;
+    }
+    .header__wrapper .cols__container .right__col nav {
+      flex-direction: row;
+    }
+    .header__wrapper .cols__container .right__col nav button {
+      margin-top: 0;
+    }
+}
+/* #endregion */
+
+/* #region Responsividade 992px - 1920px */
+@media screen and (min-device-width: 992px) and (max-device-width: 1920px) {
+  .nav-item a {
+      font-family: var(--font-title);
+      position: relative;
+      display: inline-block;
+      padding: 25px 30px;
+      margin: 0 20px;
+      color: var(--color-red-pure);
+      font-size: .8em;
+      text-decoration: none;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: 0.5s;
+      letter-spacing: 4px;
+      -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+  }
+
+  .navbar-nav {
+      margin-right: 15px;
+  }
+}
+
+/* #endregion */

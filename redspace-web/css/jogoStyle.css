@@ -1,0 +1,684 @@
+/* #region reset */
+ 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ 
+/* #endregion */
+ 
+/* #region variaveis */
+ 
+/* Fontes de título */
+@font-face {
+  font-family: 'robotaur';
+  src: url('../fonts/robotaur.ttf');
+}
+ 
+/* Fontes de parágrafo */
+@font-face {
+  font-family: 'zekton_rg';
+  src: url('../fonts/zekton_rg.otf');
+}
+ 
+ 
+:root {
+  --font-title: 'robotaur', sans-serif;
+  --font-paragraph: 'zekton_rg', sans-serif;
+  scroll-behavior: smooth;
+}
+ 
+/* colors */
+:root {
+  --color-default: #111111;
+  --color-primary: #cc0000;
+  --color-secundary: #f6f6f7;
+  --color-tertiary: #343434;
+  --color-quaternary: #990000;
+ 
+  /* palheta de vermelhos */
+  --color-red-pure: #e60000;
+  --color-red-stronger: #b30000;
+  --color-red-dark: #800000;
+ 
+  /* palheta de cinzas */
+  --color-gray-dark: #222222;
+  --color-gray-semi-dark: #333333;
+  --color-gray-light: #999999;
+ 
+ 
+}
+ 
+/* Definindo os tamanhos */
+:root {
+  font-size: 14px;
+  --title-default: 4em;
+  --subtitle-default: 2.5em;
+  --paragraph-default: 1.5em;
+  --anchor-default: 1.2em;
+}
+ 
+/* #endregion */
+ 
+/* #region global */
+ 
+html {
+  overflow-x: hidden;
+}
+ 
+/* Usa-se o !important para que as nossas definições de estilo sobreponham as definições do bootstrap */
+h1 {
+  font-family: var(--font-title) !important;
+  color: var(--color-secundary) !important;
+  font-size: var(--title-default) !important;
+}
+ 
+h2 {
+  font-family: var(--font-title) !important;
+  font-size: var(--subtitle-default) !important;
+  color: var(--color-secundary) !important;
+}
+ 
+h3 {
+  font-family: var(--font-title) !important;
+  font-size: var(--subtitle-default) !important;
+  color: var(--color-default) !important;
+}
+ 
+h4 {
+  font-family: var(--font-paragraph) !important;
+  font-size: var(--paragraph-default) !important;
+  color: var(--color-gray-light) !important;
+}
+ 
+p {
+  font-family: var(--font-paragraph) !important;
+  font-size: var(--paragraph-default) !important;
+  color: var(--color-default) !important;
+}
+ 
+hr {
+  width: 100%;
+  height: .5em;
+  background-color: var(--color-primary) !important;
+  border: none;
+}
+ 
+section {
+  overflow-y: hidden;
+}
+ 
+ul,
+ol {
+  list-style: none !important;
+}
+ 
+nav {
+  z-index: 99;
+}
+ 
+a {
+  font-family: var(--font-paragraph);
+}
+ 
+button {
+  font-family: var(--font-paragraph);
+}
+ 
+/* #endregion */
+ 
+/* #region navbar */
+.my-navbar {
+  margin: 0 auto;
+}
+ 
+.my-navbar li {
+  padding: 0 5px;
+}
+ 
+.my-navbar li button {
+  font-family: var(--font-title);
+  font-size: 1.5em;
+  font-weight: 1;
+}
+ 
+.nav-item a {
+  font-family: var(--font-title);
+  position: relative;
+  display: inline-block;
+  padding: 25px 30px;
+  margin: 0 20px;
+  color: var(--color-red-pure);
+  font-size: auto;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+ 
+.nav-item a:hover {
+  background: var(--color-red-pure);
+  color: var(--color-secundary);
+  box-shadow: 0 0 5px var(--color-red-pure),
+      0 0 25px var(--color-red-pure),
+      0 0 50px var(--color-red-pure),
+      0 0 200px var(--color-red-pure);
+}
+ 
+.nav-item a span {
+  position: absolute;
+  display: block;
+}
+ 
+.nav-item a span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-red-pure));
+  animation: animate1 1s linear infinite;
+}
+ 
+@keyframes animate1 {
+  0% {
+      left: -100%;
+  }
+ 
+  50%,
+  100% {
+      left: 100%;
+  }
+}
+ 
+.nav-item a span:nth-child(2) {
+  top: -100px;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--color-red-pure));
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+ 
+@keyframes animate2 {
+  0% {
+      top: -100%;
+  }
+ 
+  50%,
+  100% {
+      top: 100%;
+  }
+}
+ 
+.nav-item a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--color-red-pure));
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+ 
+@keyframes animate3 {
+  0% {
+      right: -100%;
+  }
+ 
+  50%,
+  100% {
+      right: 100%;
+  }
+}
+ 
+.nav-item a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, var(--color-red-pure));
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+ 
+@keyframes animate4 {
+  0% {
+      bottom: -100%;
+  }
+ 
+  50%,
+  100% {
+      bottom: 100%;
+  }
+}
+.dropright a i{
+  font-size: 1.6em;
+}
+ 
+.login-area button{
+  margin-left: 10px;
+}
+ 
+.my-profile-dropdown li a i{
+  font-size: 1.5em;
+  text-align: center;
+  padding: 0px 5px;
+}
+ 
+.my-profile-dropdown{
+  text-align: left;
+  align-items: center;
+}
+ 
+.navbar-logo img {
+  width: 150px;
+}
+ 
+/* #endregion */
+ 
+/* #region Página inicial do jogo */
+ 
+#game-page {
+  background-color: #222222;
+  padding: 5rem;
+}
+ 
+.row {
+  margin-top: 5rem;
+}
+ 
+.img {
+  width: 125%;
+}
+ 
+.gallery-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  justify-content: space-between;
+}
+ 
+.small-img-col {
+  flex-basis: 24%;
+  cursor: pointer;
+  transition: 1s ease;
+}
+ 
+.small-img-col:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  transition: 1s ease;
+}
+ 
+.right-description {
+  margin-left: 18rem;
+  margin-right: -10rem;
+  word-wrap: break-word;
+}
+ 
+.right-description a {
+  margin-left: 25px;
+  text-decoration: none;
+  padding: .6em 1.5em;
+  color: var(--color-secundary);
+  background-color: var(--color-default);
+  border-color: var(--color-quaternary);
+  transition: .5s;
+  border-style: solid;
+}
+ 
+.right-description a:hover {
+  background-color: var(--color-quaternary);
+  transition: .5s;
+}
+ 
+h2 {
+  font-family: var(--font-paragraph) !important;
+  font-weight: 800;
+}
+ 
+h4 {
+  padding-top: 50px;
+}
+ 
+p {
+  font-family: var(--font-paragraph) !important;
+  color: #f6f6f7 !important;
+  margin-top: 2em;
+  margin-bottom: 5em;
+}
+ 
+.classificação i {
+  color: yellow;
+  font-size: 30px;
+ 
+}
+ 
+/* #endregion */
+ 
+/* #region Comentários */
+ 
+#profile {
+  background-color: unset;
+ 
+}
+ 
+#postComentario {
+  margin-top: -12px;
+  margin-bottom: 55px;
+  padding: 6px;
+  padding-bottom: 4px;
+  text-align: center;
+  background-color: var(--color-default);
+  color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 13px;
+  width: 50%;
+  transition: .5s;
+}
+ 
+#postComentario:hover {
+  border-color: var(--color-red-pure);
+  transition: .5s;
+}
+ 
+#comments-page {
+  background-color: #222222;
+}
+ 
+.container {
+  background-color: #333333;
+  border-radius: 18px;
+  margin-top: 50px;
+  margin-left: 70px;
+  width: 100%;
+  border: 2px solid var(--color-red-dark);
+}
+ 
+.darker {
+  margin-top: 1%;
+  margin-left: 3%;
+  border: 1px solid var(--color-red-pure);
+  background-color: black;
+  float: right;
+  border-radius: 5px;
+  padding-left: 40px;
+  padding-right: 30px;
+  padding-top: 10px;
+  width: 100%;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+ 
+.darker h4,
+.darker span {
+  display: inline;
+}
+ 
+.darker p,
+.darker span {
+  color: rgb(184, 183, 183);
+}
+ 
+h1 {
+  color: white !important;
+  padding-left: 5px!important;
+  font-size: 45px!important;
+}
+ 
+h4 {
+  color: white;
+  font-weight: bold;
+}
+ 
+label {
+  color: rgb(212, 208, 208);
+}
+ 
+.form-group textarea {
+  width: 110%;
+  height: 200%;
+  padding: 12px 20px;
+  color: var(--color-secundary) !important;
+  border-color: var(--color-red-pure);
+  border-radius: 5px;
+  font-size: 16px;
+  resize: none;
+}
+ 
+.form-group h4 {
+  margin-top: -42px!important;
+  margin-bottom: 15px;
+}
+ 
+.classificação02 {
+  margin-top: -8%;
+  margin-left: -6%;
+}
+ 
+.classificação02 li i {
+  transition: .5s ease;
+}
+ 
+.classificação02 li i:hover {
+  box-shadow:
+    1px 1px #373737,
+    2px 2px #373737,
+    3px 3px #373737,
+    4px 4px #373737,
+    5px 5px #373737,
+    6px 6px #373737;
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
+  transition: .5s ease;
+}
+ 
+#comentarioModal p,
+#erroModal p{
+  color: black!important;
+}
+ 
+#checkbx {
+  background-color: black;
+}
+ 
+#darker img {
+  margin-right: 15px;
+  position: static;
+}
+ 
+/* #endregion */
+ 
+.rating-stars {
+  display: block;
+  width: 50vmin;
+  padding: 3vmin;
+  border-radius: 5vmin;
+  position: relative;
+  margin-left: -135px;
+  display: flex;
+  justify-content: center;
+  transform: rotateX(15deg);
+}
+ 
+input { display: none; }
+ 
+label {
+  width: 2vmin;
+  height: 10vmin;
+  cursor: pointer;
+  margin: 0.5vmin 1.5vmin;
+  transition: var(--tran);
+  transition-delay: 0s;
+  position: relative;
+}
+ 
+label:before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "\2605";
+  z-index: 2;
+  font-size: 5vmin;
+  line-height: 5vmin;
+  color: #FFEA00;
+  text-align: center;
+  transition: var(--tran);
+  text-shadow:
+    1px 1px 1px var(--tb),
+    -1px -1px 1px var(--tb),
+    -1px 0px 1px var(--tb),
+    1px 0px 1px var(--tb),    
+    0vmin 0.1vmin 1px #FFEA00,
+    0vmin 0.1vmin 1px #FFEA00,
+    0vmin 0.2vmin 1px #FFEA00,
+    0vmin 0.2vmin 1px #FFEA00,
+    0vmin 0.3vmin 1px #FFEA00,
+    0vmin 0.3vmin 1px #FFEA00,
+    0vmin 0.4vmin 1px #FFEA00,
+    0vmin 0.4vmin 1px #FFEA00,
+    0vmin 0.5vmin 1px #FFEA00,
+    0vmin 0.5vmin 1px #FFEA00,
+    0vmin 0.6vmin 1px #FFEA00,
+    0vmin 0.6vmin 1px #FFEA00,
+    0vmin 0.7vmin 1px #FFEA00,
+    0vmin 0.7vmin 1px #FFEA00,
+    0vmin 0.8vmin 1px #FFEA00,
+    0vmin 0.8vmin 1px #FFEA00,
+    0vmin 0.9vmin 1px #FFEA00,
+    0vmin 0.9vmin 1px #FFEA00,
+    0vmin 1.0vmin 1px #FFEA00,
+    0vmin 1.1vmin 1px #FFEA00,
+    0vmin 1.1vmin 1px #FFEA00,
+    0vmin 1.2vmin 1px #FFEA00,
+    0vmin 1.2vmin 1px #FFEA00,
+    0vmin 1.3vmin 1px #FFEA00,
+    0vmin 1.3vmin 1px #FFEA00,
+    0vmin 1.4vmin 1px #FFEA00,
+    0vmin 1.4vmin 1px #FFEA00,
+    0vmin 1.5vmin 1px #FFEA00,
+    0vmin 1.5vmin 1px #FFEA00,
+    0vmin 1.6vmin 1px #FFEA00,
+    0vmin 1.6vmin 3px #00000020;
+  filter: drop-shadow(0px 5px 10px #FFEA00) drop-shadow(0px 5px 30px #FFEA00);    
+}
+ 
+label:hover:before {
+  color: #FFEA00;
+  filter: drop-shadow(0px 5px 15px #FFEA00) drop-shadow(0px 5px 30px #FFEA00);
+}
+ 
+ 
+ 
+ 
+/*** unchecked:before ***/
+input:checked + label ~ label:before,
+input:checked + label ~ label:hover:active:before {
+  transition: var(--tran);
+  color: #FFEA00;
+  color: #18242f;
+  filter: none;
+  text-shadow:
+    1px 1px 1px var(--tbh),
+    -1px -1px 1px var(--tbh),
+    -1px 0px 1px var(--tbh),
+    1px 0px 1px var(--tbh),
+    0vmin 0.01vmin 1px #FFEA00,
+    0vmin 0.02vmin 1px #FFEA00,
+    0vmin 0.03vmin 1px #FFEA00,
+    0vmin 0.04vmin 1px #FFEA00,
+    0vmin 0.05vmin 1px #FFEA00,
+    0vmin 0.06vmin 1px #FFEA00,
+    0vmin 0.07vmin 1px #FFEA00,
+    0vmin 0.08vmin 1px #FFEA00,
+    0vmin 0.09vmin 1px #FFEA00,
+    0vmin 0.10vmin 1px #FFEA00,
+    0vmin 0.11vmin 1px #FFEA00,
+    0vmin 0.12vmin 1px #FFEA00,
+    0vmin 0.13vmin 1px #FFEA00,
+    0vmin 0.14vmin 1px #FFEA00,
+    0vmin 0.15vmin 1px #FFEA00,
+    0vmin 0.16vmin 1px #FFEA00,
+    0vmin 0.17vmin 1px #FFEA00,
+    0vmin 0.18vmin 1px #FFEA00,
+    0vmin 0.19vmin 1px #FFEA00,
+    0vmin 0.20vmin 1px #FFEA00,
+    0vmin 0.21vmin 1px #FFEA00,
+    0vmin 0.22vmin 1px #FFEA00,
+    0vmin 0.23vmin 1px #FFEA00,
+    0vmin 0.24vmin 1px #FFEA00,
+    0vmin 0.25vmin 1px #FFEA00,
+    0vmin 0.26vmin 1px #FFEA00,
+    0vmin 0.27vmin 1px #FFEA00,
+    0vmin 0.28vmin 1px #FFEA00,
+    0vmin 0.29vmin 1px #FFEA00,
+    0vmin 0.3vmin 1px #072239,
+    0vmin 0.5vmin 3px #00000020;
+}
+ 
+ 
+ 
+/*** unchecked:hover:before ***/
+input:checked + label ~ label:hover:before,
+label ~ label:hover:active:before {
+  color: #FFEA00;
+  text-shadow:
+    1px 1px 1px var(--tbh),
+    -1px -1px 1px var(--tbh),
+    -1px 0px 1px var(--tbh),
+    1px 0px 1px var(--tbh),
+    0vmin 0.02vmin 1px #FFEA00,
+    0vmin 0.04vmin 1px #FFEA00,
+    0vmin 0.06vmin 1px #FFEA00,
+    0vmin 0.08vmin 1px #FFEA00,
+    0vmin 0.10vmin 1px #FFEA00,
+    0vmin 0.12vmin 1px #FFEA00,
+    0vmin 0.14vmin 1px #FFEA00,
+    0vmin 0.16vmin 1px #FFEA00,
+    0vmin 0.18vmin 1px #FFEA00,
+    0vmin 0.20vmin 1px #FFEA00,
+    0vmin 0.22vmin 1px #FFEA00,
+    0vmin 0.24vmin 1px #FFEA00,
+    0vmin 0.26vmin 1px #FFEA00,
+    0vmin 0.28vmin 1px #FFEA00,
+    0vmin 0.30vmin 1px #FFEA00,
+    0vmin 0.32vmin 1px #FFEA00,
+    0vmin 0.34vmin 1px #FFEA00,
+    0vmin 0.36vmin 1px #FFEA00,
+    0vmin 0.38vmin 1px #FFEA00,
+    0vmin 0.40vmin 1px #FFEA00,
+    0vmin 0.42vmin 1px #FFEA00,
+    0vmin 0.44vmin 1px #FFEA00,
+    0vmin 0.46vmin 1px #FFEA00,
+    0vmin 0.48vmin 1px #FFEA00,
+    0vmin 0.50vmin 1px #FFEA00,
+    0vmin 0.52vmin 1px #FFEA00,
+    0vmin 0.54vmin 1px #FFEA00,
+    0vmin 0.56vmin 1px #FFEA00,
+    0vmin 0.58vmin 1px #FFEA00,
+    0vmin 0.60vmin 1px #FFEA00,
+    0vmin 1vmin 3px #00000020;  
+}
+ 
+ 
+label[for=rs1]:before {
+  transition-delay: 0.05s;
+}
+label[for=rs2]:before {
+  transition-delay: 0.1s;
+}
+label[for=rs3]:before {
+  transition-delay: 0.15s;
+}
+label[for=rs4]:before {
+  transition-delay: 0.2s;
+}
+label[for=rs5]:before {
+  transition-delay: 0.25s;
+}

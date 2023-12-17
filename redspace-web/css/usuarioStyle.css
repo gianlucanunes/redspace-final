@@ -1,0 +1,427 @@
+/* #region reset */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* #endregion */
+
+/* #region variaveis */
+
+/* Fontes de título */
+@font-face {
+  font-family: 'robotaur';
+  src: url('../fonts/robotaur.ttf');
+}
+
+/* Fontes de parágrafo */
+@font-face {
+  font-family: 'zekton_rg';
+  src: url('../fonts/zekton_rg.otf');
+}
+
+
+:root {
+  --font-title: 'robotaur', sans-serif;
+  --font-paragraph: 'zekton_rg', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* colors */
+:root {
+  --color-default: #111111;
+  --color-primary: #cc0000;
+  --color-secundary: #f6f6f7;
+  --color-tertiary: #343434;
+  --color-quaternary: #990000;
+
+  /* palheta de vermelhos */
+  --color-red-pure: #e60000;
+  --color-red-stronger: #b30000;
+  --color-red-dark: #800000;
+
+  /* palheta de cinzas */
+  --color-gray-dark: #222222;
+  --color-gray-semi-dark: #333333;
+  --color-gray-light: #999999;
+
+
+}
+
+/* Definindo os tamanhos */
+:root {
+  font-size: 14px;
+  --title-default: 4em;
+  --subtitle-default: 2.5em;
+  --paragraph-default: 1.5em;
+  --anchor-default: 1.2em;
+}
+
+/* #endregion */
+
+/* #region global */
+
+html {
+  overflow-x: hidden;
+}
+
+/* Usa-se o !important para que as nossas definições de estilo sobreponham as definições do bootstrap */
+h1 {
+  font-family: var(--font-title) !important;
+  color: var(--color-secundary) !important;
+  font-size: var(--title-default) !important;
+}
+
+h2 {
+  font-family: var(--font-title) !important;
+  font-size: var(--subtitle-default) !important;
+  color: var(--color-secundary) !important;
+}
+
+h3{
+  font-family: var(--font-title) !important;
+  font-size: var(--subtitle-default) !important;
+  color: var(--color-default) !important;
+}
+
+p {
+  font-family: var(--font-paragraph) !important;
+  font-size: var(--paragraph-default) !important;
+  color: var(--color-default) !important;
+}
+
+hr {
+  width: 100%;
+  height: .5em;
+  background-color: var(--color-primary) !important;
+  border: none;
+}
+
+section {
+  overflow-y: hidden;
+}
+
+ul,
+ol {
+  list-style: none !important;
+}
+
+nav {
+  z-index: 99;
+}
+
+a {
+  font-family: var(--font-paragraph);
+}
+
+/* #endregion */
+
+/* #region navbar */
+.my-navbar {
+  margin: 0 auto;
+}
+
+.my-navbar li {
+  padding: 0 5px;
+}
+
+.my-navbar li button {
+  font-family: var(--font-title);
+  font-size: 1.5em;
+  font-weight: 1;
+}
+
+.nav-item a {
+  font-family: var(--font-title);
+  position: relative;
+  display: inline-block;
+  padding: 25px 30px;
+  margin: 0 20px;
+  color: var(--color-red-pure);
+  font-size: auto;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.nav-item a:hover {
+  background: var(--color-red-pure);
+  color: var(--color-secundary);
+  box-shadow: 0 0 5px var(--color-red-pure),
+      0 0 25px var(--color-red-pure),
+      0 0 50px var(--color-red-pure),
+      0 0 200px var(--color-red-pure);
+}
+
+.nav-item a span {
+  position: absolute;
+  display: block;
+}
+
+.nav-item a span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-red-pure));
+  animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+  0% {
+      left: -100%;
+  }
+
+  50%,
+  100% {
+      left: 100%;
+  }
+}
+
+.nav-item a span:nth-child(2) {
+  top: -100px;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--color-red-pure));
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+  0% {
+      top: -100%;
+  }
+
+  50%,
+  100% {
+      top: 100%;
+  }
+}
+
+.nav-item a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--color-red-pure));
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes animate3 {
+  0% {
+      right: -100%;
+  }
+
+  50%,
+  100% {
+      right: 100%;
+  }
+}
+
+.nav-item a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, var(--color-red-pure));
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+  0% {
+      bottom: -100%;
+  }
+
+  50%,
+  100% {
+      bottom: 100%;
+  }
+}
+.dropright a i{
+  font-size: 1.6em;
+}
+
+.login-area button{
+  margin-left: 10px;
+}
+
+.my-profile-dropdown li a i{
+  font-size: 1.5em;
+  text-align: center;
+  padding: 0px 5px;
+}
+
+.my-profile-dropdown{
+  text-align: left;
+  align-items: center;
+}
+
+.navbar-logo img {
+  width: 150px;
+}
+
+/* #endregion */
+
+/* #region Página de Usuário */
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header__wrapper header {
+  width: 100%;
+  background: url("../img/home/wallpaper-com-transicao.png") no-repeat 50% 20% / cover;
+  min-height: calc(100px + 15vw);
+}
+
+.header__wrapper .cols__container .left__col {
+  padding: 25px 20px;
+  text-align: center;
+  max-width: 350px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.header__wrapper .cols__container .left__col .img__container {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translatex(-50%);
+}
+.header__wrapper .cols__container .left__col .img__container img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.18);
+}
+.header__wrapper .cols__container .left__col .img__container span {
+  position: absolute;
+  background: #2afa6a;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  bottom: 3px;
+  right: 11px;
+  border: 2px solid #fff;
+}
+.header__wrapper .cols__container .left__col h3 {
+  margin-top: 60px;
+  font-weight: 600;
+  font-size: 22px!important;
+  margin-bottom: 5px;
+}
+.header__wrapper .cols__container .left__col p {
+  font-size: 0.9rem;
+  color: #818181;
+  margin: 0;
+}
+.header__wrapper .cols__container .left__col .line {
+  justify-content: space-between;
+  position: relative;
+  margin: 35px 0;
+}
+
+.header__wrapper .cols__container .left__col .line:after {
+  position: absolute;
+  content: "";
+  bottom: -16px;
+  display: block;
+  background: #b30000;
+  height: 1px;
+  width: 100%;
+}
+.header__wrapper .cols__container .content p {
+  font-size: 1rem;
+  color: #1d1d1d;
+  line-height: 1.8em;
+}
+.header__wrapper .cols__container .content ul {
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+.header__wrapper .cols__container .content ul li {
+  display: flex;
+}
+.header__wrapper .cols__container .content ul i {
+  font-size: 1.3rem;
+}
+.header__wrapper .cols__container .right__col nav {
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.header__wrapper .cols__container .right__col nav ul {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+.header__wrapper .cols__container .right__col nav ul li a {
+  text-transform: uppercase;
+  color: #818181;
+}
+.header__wrapper .cols__container .right__col nav ul li:nth-child(1) a {
+  color: #1d1d1d;
+  font-size: 20px!important;
+  font-weight: 600;
+}
+.header__wrapper .cols__container .right__col nav button {
+  background: #b30000;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: .5s;
+  
+}
+.header__wrapper .cols__container .right__col nav button:hover {
+  background-color: #800000;
+  transition: .5s;
+}
+.header__wrapper .cols__container .right__col .photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 20px;
+}
+.header__wrapper .cols__container .right__col .photos img {
+  max-width: 100%;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* #endregion */
+
+
+  
